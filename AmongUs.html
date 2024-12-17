@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<!--
+## Server-Liste ##
+-- offiziell --
+523967150       # Server1
+432072522       # Server2
+524390839       # Server3
+-- inoffiziell --
+647844941       # Server
+781110356       # Nicht angegeben
+-->
+<title>Among  Us</title>
+<style>
+    body {
+        background-color: black;
+        color: white;
+    }
+</style>
+<body>
+    <select id="server-select">
+        <option value="523967150">Server 1</option>
+        <option value="432072522">Server 2</option>
+        <option value="524390839">Server 3</option>
+        <option value="647844941" selected="selected">Server</option>
+    </select>
+    <input type="text" id="username" placeholder="Name eingeben" />
+    <button onclick="startGame()">Starten</button>
+    <iframe id="gameFrame" src="" height="800" width="100%" frameborder="0" allowfullscreen></iframe>
+
+    <script>
+        function startGame() {
+            var selectElement = document.getElementById("server-select");
+            var selectedValue = selectElement.value;
+            updateIframe(selectedValue);
+        }
+        function updateIframe(selectedServer) {
+            var username = document.getElementById('username').value;
+            var iframeSrc = "https://turbowarp.org/" + selectedServer + "/embed?hqpen&autoplay&fullscreen-background=black&addons=remove-curved-stage-border&username=" + encodeURIComponent(username);
+            
+            // Setze die URL des Iframes
+            document.getElementById('gameFrame').src = iframeSrc;
+        }
+      </script>
+</body>
+</html>
