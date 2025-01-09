@@ -36,7 +36,7 @@
         }
         function updateIframe(selectedServer) {
             var username = document.getElementById('username').value;
-            var iframeSrc = "https://turbowarp.org/" + selectedServer + "/embed?hqpen&autoplay&fullscreen-background=black&addons=remove-curved-stage-border&username=" + encodeURIComponent(username);
+            var iframeSrc = "https://turbowarp.org/" + selectedServer + "/embed?hqpen&autoplay&fullscreen-background=black&addons=remove-curved-stage-border&settings-button&username=" + encodeURIComponent(username);
             
             // Setze die URL des Iframes
             document.getElementById('gameFrame').src = iframeSrc;
