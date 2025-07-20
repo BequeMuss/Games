@@ -2,94 +2,154 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <title>Startseite</title>
+  <title>about:blank</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+      color: #2f3e46;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+
+    /* Großer Header / Hero */
+    header {
+      background-color: #4b0000; /* dunkles Rot */
+      color: #fff;
+      padding: 60px 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(139,0,0,0.5);
+      margin-bottom: 50px;
+    }
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+    header p {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #f0dcdc;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.4;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      color: #5a0000;
+      margin-bottom: 30px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    ul {
+      list-style: none;
+      max-width: 320px;
+      margin: 0 auto 50px auto;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 14px 0;
+    }
+
+    ul li a {
+      display: inline-block;
+      width: 100%;
+      padding: 12px 25px;
+      font-size: 1.2rem;
+      color: #fff;
+      background-color: #8b0000; /* dunkelrot */
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(139, 0, 0, 0.4);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      font-weight: 600;
+    }
+
+    ul li a:hover,
+    ul li a:focus {
+      background-color: #5c0000;
+      box-shadow: 0 6px 12px rgba(92, 0, 0, 0.6);
+      outline: none;
+    }
+
+    .footer {
+      font-size: 0.95rem;
+      color: #617d98;
+      margin-top: 30px;
+    }
+
+    .footer a {
+      color: #8b0000;
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    .footer a:hover,
+    .footer a:focus {
+      text-decoration: underline;
+      outline: none;
+    }
+
+    /* Responsive Anpassung */
+    @media (max-width: 400px) {
+      ul {
+        max-width: 90vw;
+      }
+      ul li a {
+        font-size: 1rem;
+        padding: 10px 15px;
+      }
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      h3 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h2>welcome to emeraude.cookieclickergame.com</h2>
-<h3>Games</h3>
+
+  <header>
+    <h1>Emeraude Games</h1>
+    <p>Personal projects and fun browser games built from scratch to learn and share coding skills.</p>
+  </header>
+
+  <h3>Games</h3>
+
   <ul>
     <li><a href="AmongUs.html">AmongUs</a></li>
     <li><a href="Geometry.html">Geometry Dash Subzero</a></li>
     <li><a href="GeometryDashWorld.html">Geometry Dash World</a></li>
   </ul>
-  made by @RAG 🤫
-  <a href="/about.html">About this project</a>
- 
+
+  <div class="footer">
+    made by @RAG 🤫
+    <a href="/about.html">About this project</a>
+  </div>
+
 </body>
-  <style>
-    /* Grundlegendes Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body Styling */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
-  text-align: center;
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 90vh;
-}
-
-/* Titel */
-h1 {
-  font-size: 2.5rem;
-  color: #e63946;
-  margin-bottom: 20px;
-}
-
-/* Überschrift */
-h2 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 30px;
-}
-
-/* Liste der Spiele */
-ul {
-  list-style-type: none;
-  padding: 0 0 20px 0; /* unten etwas Luft */
-  margin-bottom: auto;
-}
-
-ul li {
-  margin: 12px 0;  /* nur vertikaler Abstand, ca. 12px */
-}
-
-ul li a {
-  text-decoration: none;
-  font-size: 1.2rem;
-  color: #1d3557;
-  background-color: #a8dadc;
-  padding: 10px 20px;
-  border-radius: 5px;
-  display: inline-block; /* damit padding wirkt */
-  transition: background-color 0.3s ease;
-}
-
-
-ul li a:hover {
-  background-color: #457b9d;
-  color: #fff;
-}
-
-/* Made by Hinweis */
-footer {
-  font-size: 1rem;
-  color: #888;
-  margin-top: 20px;
-}
-
-
-  </style>
-  
 </html>
-
-
-
