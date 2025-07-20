@@ -54,12 +54,12 @@ h2 {
 /* Liste der Spiele */
 ul {
   list-style-type: none;
-  padding: 0;
+  padding: 0 0 20px 0; /* unten etwas Luft */
   margin-bottom: auto;
 }
 
 ul li {
-  margin: 15px 15px;
+  margin: 12px 0;  /* nur vertikaler Abstand, ca. 12px */
 }
 
 ul li a {
@@ -69,8 +69,10 @@ ul li a {
   background-color: #a8dadc;
   padding: 10px 20px;
   border-radius: 5px;
+  display: inline-block; /* damit padding wirkt */
   transition: background-color 0.3s ease;
 }
+
 
 ul li a:hover {
   background-color: #457b9d;
