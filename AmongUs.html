@@ -16,6 +16,13 @@
         background-color: black;
         color: white;
     }
+    #gameFrame {
+    display: none; /* iframe anfangs versteckt */
+  }
+  #loadingText {
+    font-size: 24px;
+    margin-top: 20px;
+  }
 </style>
 <body>
     <select id="server-select">
@@ -26,6 +33,7 @@
     </select>
     <input type="text" id="username" placeholder="Name eingeben" />
     <button onclick="startGame()">Starten</button>
+    <div id="loadingText"></div>
     <iframe id="gameFrame" src="" height="800" width="100%" frameborder="0" allowfullscreen></iframe>
 
     <script>
@@ -33,10 +41,29 @@
             var selectElement = document.getElementById("server-select");
             var selectedValue = selectElement.value;
             updateIframe(selectedValue);
+            const loadingText = document.getElementById('loadingText');
+    const iframe = document.getElementById('gameFrame');
+
+    let percent = 0;
+    loadingText.textContent = `Lade... ${percent}%`;
+
+    // Schritt alle 100ms, 10 Sekunden insgesamt
+    const interval = setInterval(() => {
+        percent++;
+        loadingText.textContent = `Lade... ${percent}%`;
+
+        if (percent >= 100) {
+            clearInterval(interval);
+            loadingText.style.display = 'none';  // Ladeanzeige ausblenden
+            iframe.src = "https://example.com";  // Hier die URL einfügen
+            iframe.style.display = 'block';      // iframe sichtbar machen
+        }
+    }, 100); // 100ms pro Prozent
+}
         }
         function updateIframe(selectedServer) {
             var username = document.getElementById('username').value;
-            var iframeSrc = "https://turbowarp.org/" + selectedServer + "/embed?hqpen&autoplay&fullscreen-background=black&addons=remove-curved-stage-border&settings-button&username=" + encodeURIComponent(username);
+            var iframeSrc = "https://turbowarp.org/" + selectedServer + "/embed?hqpen&autoplay&fullscreen-background=black&addons=remove-curved-stage-border&username=" + encodeURIComponent(username);
             
             // Setze die URL des Iframes
             document.getElementById('gameFrame').src = iframeSrc;
@@ -44,3 +71,4 @@
       </script>
 </body>
 </html>
+
