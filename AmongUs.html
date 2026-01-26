@@ -31,7 +31,7 @@
         <option value="524390839">Server 3</option>
         <option value="647844941" selected="selected">Server</option>
     </select>
-    <input type="text" id="username" placeholder="Name eingeben" />
+    <input type="text" id="username" minlength="3" maxlength="10" placeholder=" Name" />
     <button onclick="startGame()">Starten</button>
     <div id="loadingText"></div>
     <iframe id="gameFrame" src="" height="800" width="100%" frameborder="0" allowfullscreen></iframe>
@@ -42,24 +42,24 @@
             var selectedValue = selectElement.value;
             updateIframe(selectedValue);
             const loadingText = document.getElementById('loadingText');
-    const iframe = document.getElementById('gameFrame');
-
-    let percent = 0;
-    loadingText.textContent = `Lade... ${percent}%`;
-
-    // Schritt alle 100ms, 10 Sekunden insgesamt
-    const interval = setInterval(() => {
-        percent++;
-        loadingText.textContent = `Lade... ${percent}%`;
-
-        if (percent >= 100) {
-            clearInterval(interval);
-            loadingText.style.display = 'none';  // Ladeanzeige ausblenden
-            
-            iframe.style.display = 'block';      // iframe sichtbar machen
+            const iframe = document.getElementById('gameFrame');
+        
+            let percent = 0;
+            loadingText.textContent = `Lade... ${percent}%`;
+        
+            // Schritt alle 100ms, 10 Sekunden insgesamt
+            const interval = setInterval(() => {
+                percent++;
+                loadingText.textContent = `Lade... ${percent}%`;
+        
+                if (percent >= 100) {
+                    clearInterval(interval);
+                    loadingText.style.display = 'none';  // Ladeanzeige ausblenden
+                    
+                    iframe.style.display = 'block';      // iframe sichtbar machen
+                }
+            }, 200);
         }
-    }, 200);
-}
         
         function updateIframe(selectedServer) {
             var username = document.getElementById('username').value;
@@ -73,4 +73,5 @@
       </script>
 </body>
 </html>
+
 
