@@ -30,8 +30,12 @@
 }
 
 #gameFrame {
+  display: block;        /* wichtig */
+  width: 100%;
+  height: 90vh;
   position: relative;
-  top: -4.5vh;   /* schiebt den iframe nach oben */
+  top: -4.5vh;           /* obere Teile verstecken */
+  border: none;
 }
 
 </style>
@@ -46,7 +50,7 @@
     <button onclick="startGame()">Starten</button>
     <div id="loadingText"></div>
     <div class="frame-wrapper">
-  <iframe id="gameFrame" src="" height="90vh" frameborder="0" allowfullscreen></iframe>
+  <iframe id="gameFrame" src="" frameborder="0" allowfullscreen></iframe>
 </div>
 
     
@@ -89,6 +93,7 @@
       </script>
 </body>
 </html>
+
 
 
 
