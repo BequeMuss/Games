@@ -45,7 +45,7 @@
         <option value="524390839">Server 3</option>
         <option value="647844941" selected="selected">Server</option>
     </select>
-    <input type="text" id="username" minlength="3" maxlength="10" placeholder=" Name" />
+    <input type="text" id="username" minlength="3" maxlength="16" placeholder=" Name" />
     <button onclick="startGame()">Starten</button>
     <div id="loadingText"></div>
     <div class="frame-wrapper">
@@ -89,9 +89,17 @@
             document.getElementById('gameFrame').style.display = 'none';
 
         }
+          const usernameInput = document.getElementById('username');
+
+  usernameInput.addEventListener('input', () => {
+    usernameInput.value = usernameInput.value
+      .replace(/\s+/g, '')          // Leerzeichen entfernen
+      .replace(/[^a-zA-Z0-9]/g, ''); // nur Buchstaben & Zahlen erlauben
+  });
       </script>
 </body>
 </html>
+
 
 
 
