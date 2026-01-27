@@ -45,7 +45,7 @@
         <option value="524390839">Server 3</option>
         <option value="647844941" selected="selected">Server</option>
     </select>
-    <input type="text" id="username" minlength="3" maxlength="16" placeholder=" Name" />
+    <input type="text" id="username" minlength="3" maxlength="16" pattern="[a-zA-Z0-9]{3,10}" placeholder="Name eingeben" />
     <button onclick="startGame()">Starten</button>
     <div id="loadingText"></div>
     <div class="frame-wrapper">
@@ -99,6 +99,7 @@
       </script>
 </body>
 </html>
+
 
 
 
